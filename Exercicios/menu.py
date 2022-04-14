@@ -13,11 +13,15 @@ def coletarVar2():
     this.var2 = float(input())
 
 def mostrarMenu():
-    print('Escolha um dos exercicios abaixo: \n ' +
-          '\n.Exercicio - 1' +
-          '\n.Exercicio - 2' +
-          '\n.Exercicio - 3' +
-          '\n.Exercicio - 4' +
-          '\n.Exercicio - 5')
+    print('Escolha um dos exercicios abaixo: \n ')
+    print('Sair - ' + str(0))
+    for i in range(1, 20 + 1):
+        i + 1
+        print('Exercicio - ' + str(i))
 
     this.opcao = int(input()) #Coletar
+
+def lista():
+    #Mostrar o menu em tela
+    while this.opcao != 0:
+        mostrarMenu()
