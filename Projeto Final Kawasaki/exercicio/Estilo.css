@@ -1,0 +1,18 @@
+body{
+    background-color: lightcyan;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    color: darkorchid;
+}
+h3{
+    color: darksalmon;
+}
+h5{
+    color: goldenrod;
+}
+p{
+    font-size: 14px;
+    text-align: justify;
+    font-family: ;
+}

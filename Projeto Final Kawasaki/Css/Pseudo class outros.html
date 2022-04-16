@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Pseudo-Class: outros</title>
+        <style>
+        body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        p:first-letter{font-size: 50px; color: tomato;}
+        p::first-line{background-color: yellow;}
+        p:first-child{background-color: violet;}
+        .jw::before{content:"Leia isso -";}
+        .neo:after{content: "- Lembre disso";  color:darkgrey; font-size: 75%;}
+        h2{text-shadow: 5px 5px 5px black;}
+        p.quebra{width: 100px; border: 1px solid black; word-wrap: break-word;}
+        </style>
+    </head>
+    <body>
+        <h2>Pseudo-Class: first-letter</h2>
+        <p>Meu nome é John Wick.</p>
+        <p>O que eu quero?</p>
+        <p>Guns, lots of guns.</p>
+
+        <h2>Pseudo-Class: first-line</h2>
+        <p>Para parar a degradação do ambiente natura; do planeta e construir um futuro no qual os seres humanos vivam em harmonia com a natureza, conservação da diversidade biológica do mundo, garantindo que o uso dos recursos naturais renováveis seja sustentável, e promovendo a redução da poluição e do desperdício consumo.</p>
+
+        <h2>Pseudo-Class: first-child</h2>
+        <p>Esse parágrafo é a primeira parte deste bloco.</p>
+        <h1>Bem-vindo - Minha página web</h1>
+        <p>Esse parágrafo não é a primeira parte deste bloco.</p>
+        <div>
+            <p>Esse parágrafo é a primeira parte deste bloco.</p>
+            <p>Esse parágrafo nãoé a primeira parte deste bloco.</p>
+        </div>
+        <h2>Pseudo-Class: before</h2>
+        <p class="jw">Meu nome é John Wick.</p>
+        <p class="jw">O que eu quero?</p>
+        <hr>
+        <h2>Pseudo-Class: after</h2>
+        <p class="neo">Meu nome é John Wick.</p>
+        <p class="neo">O que eu quero?</p>
+        <hr>
+          <h2>Efeito word-wrap (quebra de palavra)</h2>
+          <p class="quebra">Esse parágrafo contém uma palavra bem comprida: Esseparágrafocontémumapalavrabemcomprida. Essa palavra comprida será quebrada e continuará na próxima linha.</p>
+    </body>
+    </html>
