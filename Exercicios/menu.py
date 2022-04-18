@@ -4,6 +4,11 @@ import exe2
 import exe3
 import exe4
 import exe5
+import exe6
+import exe7
+import exe8
+import exe9
+import exe10
 
 this.opcao = -1 #Global
 
@@ -35,38 +40,64 @@ def retornarMenu():
 
 
 def lista():
-    #Mostrar o menu em tela
-    while this.opcao != 0:
-        mostrarMenu()
-        if this.opcao == 0:
-            #Finalizando o programa
-            print('Obrigado por utilizar o programa :)')
-
-        elif this.opcao == 1:
-            print(exe1.trocarValores())
-
-            print(retornarMenu())
-
-        elif this.opcao == 2:
-            print(exe2.antecessor())
-
-            print(retornarMenu())
-        elif this.opcao == 3:
-            print(exe3.areaRetangulo())
-
-            print(retornarMenu())
-        elif this.opcao == 4:
-            print(exe4.idade())
-
-            print(retornarMenu())
-        elif this.opcao == 5:
-            print(exe5.total())
-
-            print(retornarMenu())
-        else:
-            print('Opção escolhida inválida, favor escolher uma das opções listadas\n' +
-                  'Pressione enter para tentar novamente: ')
-            input()
+    try:
+        #Mostrar o menu em tela
+        while this.opcao != 0:
             mostrarMenu()
+            if this.opcao == 0:
+                #Finalizando o programa
+                print('Obrigado por utilizar o programa :)')
+
+            elif this.opcao == 1:
+                print(exe1.trocarValores())
+
+                print(retornarMenu())
+
+            elif this.opcao == 2:
+                print(exe2.antecessor())
+
+                print(retornarMenu())
+            elif this.opcao == 3:
+                print(exe3.areaRetangulo())
+
+                print(retornarMenu())
+            elif this.opcao == 4:
+                print(exe4.idade())
+
+                print(retornarMenu())
+            elif this.opcao == 5:
+                print(exe5.total())
+
+                print(retornarMenu())
+            elif this.opcao == 6:
+                print(exe6.reajusteSalario())
+
+                print(retornarMenu())
+            elif this.opcao == 7:
+                print(exe7.valorCarro())
+
+                print(retornarMenu())
+            elif this.opcao == 8:
+                print(exe8.media())
+
+                print(retornarMenu())
+            elif this.opcao == 9:
+                print(exe9.macas())
+
+                print(retornarMenu())
+            elif this.opcao == 10:
+                print(exe10.valores())
+
+                print(retornarMenu())
+            else:
+                print('Opção escolhida inválida, favor escolher uma das opções listadas\n' +
+                      'Pressione enter para tentar novamente: ')
+                input()
+                mostrarMenu()
+    except:
+        print('\n\n______________________________________________________________')
+        print('\nEscolha uma das opções disponiveis\n')
+        print('______________________________________________________________\n\n')
+        lista()
 
 
