@@ -9,6 +9,16 @@ import exe7
 import exe8
 import exe9
 import exe10
+import exe11
+import exe12
+import exe13
+import exe14
+import exe15
+#import  exe16
+#import exe17
+#import exe18
+#import exe19
+#import exe20
 
 this.opcao = -1 #Global
 
@@ -87,6 +97,26 @@ def lista():
                 print(retornarMenu())
             elif this.opcao == 10:
                 print(exe10.valores())
+
+                print(retornarMenu())
+            elif this.opcao == 11:
+                print(exe11.vendas())
+
+                print(retornarMenu())
+            elif this.opcao == 12:
+                print(exe12.saldo())
+
+                print(retornarMenu())
+            elif this.opcao == 13:
+                print(exe13.tabuada())
+
+                print(retornarMenu())
+            elif this.opcao == 14:
+                print(exe14.inteiros())
+
+                print(retornarMenu())
+            elif this.opcao == 15:
+                print(exe15.negativos())
 
                 print(retornarMenu())
             else:

@@ -9,7 +9,6 @@ def valores():
             while x in lista:
                 print('Valor já presente na lista, adicione outro valor')
                 x = int(input("Digite o " + str(i + 1) + 'º valor: '))
-                lista.append(x)
             else:
                 lista.append(x)
 
