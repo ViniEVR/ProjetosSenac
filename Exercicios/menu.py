@@ -14,11 +14,11 @@ import exe12
 import exe13
 import exe14
 import exe15
-#import  exe16
-#import exe17
-#import exe18
-#import exe19
-#import exe20
+import  exe16
+import exe17
+import exe18
+import exe19
+import exe20
 
 this.opcao = -1 #Global
 
@@ -117,6 +117,26 @@ def lista():
                 print(retornarMenu())
             elif this.opcao == 15:
                 print(exe15.negativos())
+
+                print(retornarMenu())
+            elif this.opcao == 16:
+                print(exe16.somaValores())
+
+                print(retornarMenu())
+            elif this.opcao == 17:
+                print(exe17.mediaAritmetica())
+
+                print(retornarMenu())
+            elif this.opcao == 18:
+                print(exe18.numerosLidos())
+
+                print(retornarMenu())
+            elif this.opcao == 19:
+                print(exe19.mediaAlunos())
+
+                print(retornarMenu())
+            elif this.opcao == 20:
+                print(exe20.mediaCidadao())
 
                 print(retornarMenu())
             else:
