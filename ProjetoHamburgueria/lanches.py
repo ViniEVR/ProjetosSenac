@@ -12,6 +12,22 @@ def cardapioLanches():
           '\n\n\n10. Kill Bill R$ 39,90\n ingredientes: Pão brioche + burger 180g + cheddar cremoso e bacon bits, o cheddar e o bacon vão separados pra vc colocar como desejar.   ')
     this.opcao = int(input())  # Coletar a digitação do usuário
 
-def coletar():
-    print(' ')
-    this. = float(input())
+def selecionarLanches():
+    while this.opcao != 4:
+        mostrarCardapio()
+        if this.opcao == 1:
+            print('1 né')
+
+        if this.opcao == 2:
+            print('2 né')
+
+        if this.opcao == 3:
+            print('3 né')
+
+        if this.opcao == 4:
+                print('4 né')
+        else:
+            print('____________________________________________')
+            print('\nSelecione uma opção válida\n')
+            print('____________________________________________')
+            selecionarLanches()
