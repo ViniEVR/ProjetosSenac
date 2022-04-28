@@ -1,1 +1,0 @@
-def calculoValor(int preco):
