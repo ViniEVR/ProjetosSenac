@@ -1,3 +1,8 @@
+import conta
+import this
+import cardapio
+
+this.opcaoSobremesas = 0
 def cardapioSobremesas():
     print('Escolha a sobremesa que deseja!\n' +
           '\n\n\n1. Torta Gelada Negresco R$ 64,90\n ingredientes: Torta gelada com base de bolacha Negresco e mousse de maracujá. Manter refrigerado.' +
@@ -7,22 +12,42 @@ def cardapioSobremesas():
           '\n\n\n5. Sobremesa de Amendoim R$ 52,00\n ingredientes: Sobremesa cremosa composta de amendoim, açúcar, manteiga e creme de leite. ')
     this.opcao = int(input())  # Coletar a digitação do usuário
 
-def selecionarSobremesa():
-    while this.opcao != 4:
-        mostrarCardapio()
-        if this.opcao == 1:
-            print('1 né')
+def selecionarSobremesas():
+    while this.opcaoSobremesas != 5:
+        cardapioSobremesas()
+        if this.opcaoSobremesas == 1:
+            print('____________________________________________')
+            print('\nVocê adicionou Torta Gelada Negresco ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(64.90)
 
-        if this.opcao == 2:
-            print('2 né')
+        elif this.opcaoSobremesas == 2:
+            print('____________________________________________')
+            print('\nVocê adicionou Torta Gelada Maracuja ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(64.90)
+            cardapio.redirecionarCardapio()
 
-        if this.opcao == 3:
-            print('3 né')
 
-        if this.opcao == 4:
-                print('4 né')
+        elif this.opcaoSobremesas == 3:
+            print('____________________________________________')
+            print('\nVocê adicionou Mousse Sabores ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(59.00)
+
+        elif this.opcaoSobremesas == 4:
+            print('____________________________________________')
+            print('\nVocê adicionou Cheesecake Gelado ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(69.00)
+
+        elif this.opcaoSobremesas == 5:
+            print('____________________________________________')
+            print('\nVocê adicionou Sobremesa de Amendoim ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(52.00)
+
         else:
             print('____________________________________________')
             print('\nSelecione uma opção válida\n')
             print('____________________________________________')
-            selecionarSobremesa()

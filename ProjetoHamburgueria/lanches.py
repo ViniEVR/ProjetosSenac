@@ -1,3 +1,8 @@
+import conta
+import this
+import cardapio
+
+this.opcaoLanches = 0
 def cardapioLanches():
     print('Escolha o Hamburguer que deseja!\n' +
           '\n\n\n1. Holly Fantástico R$ 39,90\n ingredientes: Pão brioche + burger 180g + rúcula + creme de gorgonzola + bacon bits + maionese defumada.  ' +
@@ -10,22 +15,73 @@ def cardapioLanches():
           '\n\n\n8. Hulk R$ 29,90\n ingredientes: Pão brioche, double smashburger de 150g, cheddar, rúcula, cebola caramelizada e picles.   ' +
           '\n\n\n9. King Kong R$ 47,90\n ingredientes: Pão, 2 burgers de 180g, american cheese, alface, tomate, cebola roxa, bacon e acompanha maionese de tabasco.    ' +
           '\n\n\n10. Kill Bill R$ 39,90\n ingredientes: Pão brioche + burger 180g + cheddar cremoso e bacon bits, o cheddar e o bacon vão separados pra vc colocar como desejar.   ')
-    this.opcao = int(input())  # Coletar a digitação do usuário
+    this.opcaoLanches = int(input('Opção selecionada: '))  # Coletando o lanche selecionada
 
 def selecionarLanches():
-    while this.opcao != 4:
-        mostrarCardapio()
-        if this.opcao == 1:
-            print('1 né')
+    while this.opcaoLanches != 11:
+        cardapioLanches()
+        if this.opcaoLanches == 1:
+            print('____________________________________________')
+            print('\nVocê adicionou Holly Fantástico ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(39.90)
 
-        if this.opcao == 2:
-            print('2 né')
+        elif this.opcaoBebida == 2:
+            print('____________________________________________')
+            print('\nVocê adicionou Pulp Ficton Vincent ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(6.90)
+            cardapio.redirecionarCardapio()
 
-        if this.opcao == 3:
-            print('3 né')
 
-        if this.opcao == 4:
-                print('4 né')
+        elif this.opcaoLanches == 3:
+            print('____________________________________________')
+            print('\nVocê adicionou Pulp Fiction Jules ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(29.90)
+
+        elif this.opcaoLanches == 4:
+            print('____________________________________________')
+            print('\nVocê adicionou Holly Smoked Jam ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(36.90)
+
+        elif this.opcaoLanches == 5:
+            print('____________________________________________')
+            print('\nVocê adicionou Holly Salad ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(28.90)
+
+        elif this.opcaoLanches == 6:
+            print('____________________________________________')
+            print('\nVocê adicionou Holly Cheese ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(24.90)
+
+        elif this.opcaoLanches == 7:
+            print('____________________________________________')
+            print('\nVocê adicionou Holly Bacon ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(29.90)
+
+        elif this.opcaoLanches == 8:
+            print('____________________________________________')
+            print('\nVocê adicionou Hulk ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(29.90)
+
+        elif this.opcaoLanches == 9:
+            print('____________________________________________')
+            print('\nVocê adicionou King Kong ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(47.90)
+
+        elif this.opcaoLanches == 10:
+            print('____________________________________________')
+            print('\nVocê adicionou Kill Bill ao seu pedido\n')
+            print('____________________________________________')
+            conta.calculoValor(39.90)
+
         else:
             print('____________________________________________')
             print('\nSelecione uma opção válida\n')

@@ -14,7 +14,7 @@ def mostrarCardapio():
 def redirecionarCardapio():
     while this.opcaoCardapio != 90:
         print('____________________________________________')
-        print('\nValor da conta até o momento\nR$:' + str(conta.calculoValor(0)))
+        print('\nValor da conta até o momento\nR$:')
         print('____________________________________________')
         mostrarCardapio()
 
