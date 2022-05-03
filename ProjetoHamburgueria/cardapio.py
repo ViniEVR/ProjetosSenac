@@ -1,6 +1,8 @@
 import this
 import conta
 import bebidas
+import lanches
+import sobremesas
 
 this.opcaoCardapio = 0
 def mostrarCardapio():
@@ -12,26 +14,29 @@ def mostrarCardapio():
     this.opcaoCardapio = int(input('Opção selecionada: '))#Coletando opçao do usuario
 
 def redirecionarCardapio():
-    while this.opcaoCardapio != 90:
+    try:
+        while this.opcaoCardapio != 90:
+            mostrarCardapio()
+
+            if this.opcaoCardapio == 1:
+                print(lanches.selecionarLanches())
+
+            elif this.opcaoCardapio == 2:
+                print(bebidas.selecionarBebida())
+
+            elif this.opcaoCardapio == 3:
+                print(sobremesas.selecionarSobremesas())
+
+            elif this.opcaoCardapio == 4:
+                print(conta.contaComItens())
+
+            else:
+                print('____________________________________________')
+                print('\nSelecione uma opção válida\n')
+                print('____________________________________________')
+                redirecionarCardapio()
+    except:
         print('____________________________________________')
-        print('\nValor da conta até o momento\nR$:')
+        print('\nSelecione uma opção válida\n')
         print('____________________________________________')
-        mostrarCardapio()
-
-        if this.opcaoCardapio == 1:
-            print('1 né')
-
-        elif this.opcaoCardapio == 2:
-            print(bebidas.selecionarBebida())
-
-        elif this.opcaoCardapio == 3:
-            print('É 3 né')
-
-        elif this.opcaoCardapio == 4:
-            print('4 né')
-
-        else:
-            print('____________________________________________')
-            print('\nSelecione uma opção válida\n')
-            print('____________________________________________')
-            redirecionarCardapio()
+        redirecionarCardapio()

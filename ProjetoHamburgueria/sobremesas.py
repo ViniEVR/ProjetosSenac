@@ -13,41 +13,46 @@ def cardapioSobremesas():
     this.opcao = int(input())  # Coletar a digitação do usuário
 
 def selecionarSobremesas():
-    while this.opcaoSobremesas != 5:
-        cardapioSobremesas()
-        if this.opcaoSobremesas == 1:
-            print('____________________________________________')
-            print('\nVocê adicionou Torta Gelada Negresco ao seu pedido\n')
-            print('____________________________________________')
-            conta.calculoValor(64.90)
+    try:
+        while this.opcaoSobremesas != 5:
+            cardapioSobremesas()
+            if this.opcaoSobremesas == 1:
+                print('____________________________________________')
+                print('\nVocê adicionou Torta Gelada Negresco ao seu pedido\n')
+                print('____________________________________________')
+                conta.calculoValor(64.90, 'Torta gelada Negresco')
 
-        elif this.opcaoSobremesas == 2:
-            print('____________________________________________')
-            print('\nVocê adicionou Torta Gelada Maracuja ao seu pedido\n')
-            print('____________________________________________')
-            conta.calculoValor(64.90)
-            cardapio.redirecionarCardapio()
+            elif this.opcaoSobremesas == 2:
+                print('____________________________________________')
+                print('\nVocê adicionou Torta Gelada Maracuja ao seu pedido\n')
+                print('____________________________________________')
+                conta.calculoValor(64.90, 'Torta gelada de Maracuja')
 
 
-        elif this.opcaoSobremesas == 3:
-            print('____________________________________________')
-            print('\nVocê adicionou Mousse Sabores ao seu pedido\n')
-            print('____________________________________________')
-            conta.calculoValor(59.00)
+            elif this.opcaoSobremesas == 3:
+                print('____________________________________________')
+                print('\nVocê adicionou Mousse ao seu pedido\n')
+                print('____________________________________________')
+                conta.calculoValor(59.00, "Mousse")
 
-        elif this.opcaoSobremesas == 4:
-            print('____________________________________________')
-            print('\nVocê adicionou Cheesecake Gelado ao seu pedido\n')
-            print('____________________________________________')
-            conta.calculoValor(69.00)
+            elif this.opcaoSobremesas == 4:
+                print('____________________________________________')
+                print('\nVocê adicionou Cheesecake Gelado ao seu pedido\n')
+                print('____________________________________________')
+                conta.calculoValor(69.00, 'Chessecake Gelado')
 
-        elif this.opcaoSobremesas == 5:
-            print('____________________________________________')
-            print('\nVocê adicionou Sobremesa de Amendoim ao seu pedido\n')
-            print('____________________________________________')
-            conta.calculoValor(52.00)
+            elif this.opcaoSobremesas == 5:
+                print('____________________________________________')
+                print('\nVocê adicionou Sobremesa de Amendoim ao seu pedido\n')
+                print('____________________________________________')
+                conta.calculoValor(52.00, 'Sobremesa de Amendoim')
 
-        else:
-            print('____________________________________________')
-            print('\nSelecione uma opção válida\n')
-            print('____________________________________________')
+            else:
+                print('____________________________________________')
+                print('\nSelecione uma opção válida\n')
+                print('____________________________________________')
+    except:
+        print('____________________________________________')
+        print('\nSelecione uma opção válida\n')
+        print('____________________________________________')
+        selecionarSobremesas()
