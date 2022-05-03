@@ -15,7 +15,7 @@ def mostrarCardapio():
 
 def redirecionarCardapio():
     try:
-        while this.opcaoCardapio != 90:
+        while this.opcaoCardapio != 4:
             mostrarCardapio()
 
             if this.opcaoCardapio == 1:

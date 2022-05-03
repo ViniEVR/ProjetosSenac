@@ -40,7 +40,6 @@ def contaComItens():
         print('____________________________________________')
         print('\nValor da sua conta é de \nR$:' + this.valorConta)
         print('____________________________________________')
-        input('Digite enter para pagar: ')
 
 
 

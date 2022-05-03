@@ -28,7 +28,7 @@ def selecionarLanches():
                 print('____________________________________________')
                 conta.calculoValor(39.90, 'Holly Fantástico')
 
-            elif this.opcaoBebida == 2:
+            elif this.opcaoLanches == 2:
                 print('____________________________________________')
                 print('\nVocê adicionou Pulp Ficton Vincent ao seu pedido\n')
                 print('____________________________________________')
