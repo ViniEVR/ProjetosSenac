@@ -20,15 +20,31 @@ def calcularValorTotal():
     print('____________________________________________')
 
 def contaComItens():
+    try:
+        j = 0
+        for i in item:
+            print(f"\n\n{i}, valor: R${precoTotal[j]}0")
+            j += 1
 
-    j = 0
-    for i in item:
-        print(f"\n\n{i}, valor: R${precoTotal[j]}0")
-        j += 1
+        print('____________________________________________')
+        print('\nValor da sua conta é de \nR$:' + this.valorConta)
+        print('____________________________________________')
+        input('Digite enter para pagar: ')
 
-    print('____________________________________________')
-    print('\nValor da sua conta é de \nR$:' + this.valorConta)
-    print('____________________________________________')
+    except:
+        j = 0
+        for i in item:
+            print(f"\n\n{i}, valor: R${precoTotal[j]}0")
+            j += 1
+
+        print('____________________________________________')
+        print('\nValor da sua conta é de \nR$:' + this.valorConta)
+        print('____________________________________________')
+        input('Digite enter para pagar: ')
+
+
+
+
 
 
 
