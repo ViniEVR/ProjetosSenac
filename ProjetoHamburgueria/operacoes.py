@@ -32,13 +32,13 @@ def inserirSobremesas():
         print(erro)
 
 #Consultar os dados do DB
-def selecionar():
+def selecionarLanche():
     try:
-        sql = "select * from lanches"
+        sql = "select * from lanche"
         con.execute(sql)
 
-        for (lanches) in con:
-            print(lanches)
-        print('\n')
+        for(codigo, nome, ingredientes, preco) in con:
+            print(codigo, nome, ingredientes, preco)
+            print('\n')
     except Exception as erro:
         print(erro)
