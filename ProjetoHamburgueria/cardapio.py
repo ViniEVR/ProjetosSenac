@@ -3,6 +3,7 @@ import conta
 import bebidas
 import lanches
 import sobremesas
+import operacoes
 
 this.opcaoCardapio = 0
 def mostrarCardapio():

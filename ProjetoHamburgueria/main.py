@@ -1,4 +1,5 @@
-import cardapio
+
+import conexao
 
 if __name__ == "__main__":
-    cardapio.redirecionarCardapio()
+    conexao.conectar()
