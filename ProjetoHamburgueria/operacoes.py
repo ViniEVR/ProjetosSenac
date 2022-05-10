@@ -40,13 +40,14 @@ def selecionarLanche():
         sql = "select * from lanche"
         con.execute(sql)
         print('\n')
+
         for(codigo, nome, ingredientes, preco) in con:
             print(codigo, nome, ingredientes, preco)
             print('\n')
     except Exception as erro:
         print(erro)
 
-<<<<<<< Updated upstream
+
 #Consultar os dados do DB
 def selecionarBebida():
     try:
@@ -70,7 +71,7 @@ def selecionarSobremesa():
             print('\n')
     except Exception as erro:
         print(erro)
-=======
+
 def contaLanche(codigo):
     try:
         if codigo == -1:
@@ -93,6 +94,3 @@ def contaLanche(codigo):
         print('____________________________________________')
         lanches.selecionarLanches()
 
-
-
->>>>>>> Stashed changes
