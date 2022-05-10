@@ -42,3 +42,27 @@ def selecionarLanche():
             print('\n')
     except Exception as erro:
         print(erro)
+
+#Consultar os dados do DB
+def selecionarBebida():
+    try:
+        sql = "select * from bebida"
+        con.execute(sql)
+
+        for(codigo, nome, ingredientes, preco) in con:
+            print(codigo, nome, ingredientes, preco)
+            print('\n')
+    except Exception as erro:
+        print(erro)
+
+#Consultar os dados do DB
+def selecionarSobremesa():
+    try:
+        sql = "select * from sobremesa"
+        con.execute(sql)
+
+        for(codigo, nome, ingredientes, preco) in con:
+            print(codigo, nome, ingredientes, preco)
+            print('\n')
+    except Exception as erro:
+        print(erro)

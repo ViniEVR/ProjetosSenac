@@ -1,22 +1,17 @@
 import conta
 import this
 import cardapio
+import operacoes
 
 this.opcaoSobremesas = 0
-def cardapioSobremesas():
-    print('Escolha a sobremesa que deseja!\n' +
-          '\n\n\n1.Torta Gelada Negresco R$ 64,90\n ingredientes: Torta gelada com base de bolacha Negresco e mousse de maracujá.' +
-          '\n\n\n2.Torta Gelada Maracuja R$ 64,90\n ingredientes: Torta gelada com base de pão de ló ou casquinha de bolacha com recheio a base de maracujá, creme de leite e leite condensado.' +
-          '\n\n\n3.Mousse Sabores R$ 59,00\n ingredientes: Escolha entre os sabores chocolate, maracujá, morango ou napolitano (chocolate, morango e baunilha).' +
-          '\n\n\n4.Cheesecake Gelado R$ 69,00\n ingredientes: Sobremesa com base de bolacha e recheio composto de cream cheese e leite condensado, com cobertura de frutas vermelha.' +
-          '\n\n\n5.Sobremesa de Amendoim R$ 52,00\n ingredientes: Sobremesa cremosa composta de amendoim, açúcar, manteiga e creme de leite. +'
-          '\n\n\n6.Retornar ao cardápio principal ')
-    this.opcaoSobremesas = int(input('Opção selecionada:'))  # Coletar a digitação do usuário
+def cardapioSobremesa():
+    operacoes.selecionarSobremesa()
+    this.opcaoSobremesas = int(input('Opção selecionada: '))  # Coletando a sobremesa selecionado
 
 def selecionarSobremesas():
     try:
         while this.opcaoSobremesas != 7:
-            cardapioSobremesas()
+            cardapioSobremesa()
             if this.opcaoSobremesas == 1:
                 print('____________________________________________')
                 print('\nVocê adicionou Torta Gelada Negresco ao seu pedido\n')

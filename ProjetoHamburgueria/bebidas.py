@@ -1,23 +1,17 @@
 import conta
 import this
 import cardapio
+import operacoes
 
 this.opcaoBebida = 0
-def cardapioBebidas():
-    print('\n\n1.Coca-cola R$ 7,90\n' +
-          '2.Sprite R$ 6,90\n' +
-          '3.Fanta uva R$ 6,90\n' +
-          '4.Fanta laranja R$ 6,90\n' +
-          '5.Suco de laranja R$ 8,90\n' +
-          '6.Suco de maracuja R$ 8,90\n' +
-          '7.Limonada R$ 8,90\n' +
-          '8.Retornar ao cardápio principal')
-    this.opcaoBebida = int(input('Opção selecionada: '))#Coletando a bebida selecionada
+def cardapioBebida():
+    operacoes.selecionarBebida()
+    this.opcaoBebida = int(input('Opção selecionada: '))  # Coletando a bebida selecionada
 
 def selecionarBebida():
     try:
         while this.opcaoBebida != 8:
-            cardapioBebidas()
+            cardapioBebida()
             if this.opcaoBebida == 1:
                 print('____________________________________________')
                 print('\nVocê adicionou Coca-cola ao seu pedido\n')
