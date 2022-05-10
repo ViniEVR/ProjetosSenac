@@ -1,5 +1,6 @@
 import this
 
+
 #Classe responsável por calcular o valor da conta
 precoTotal = []
 item = []
