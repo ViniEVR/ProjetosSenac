@@ -47,6 +47,28 @@ def selecionarLanche():
     except Exception as erro:
         print(erro)
 
+def contaLanche(codigo):
+    try:
+        if codigo == -1:
+            cardapio.redirecionarCardapio()
+        sql = f"select nome, preco from lanche where codigo = '{codigo}'"
+        con.execute(sql)
+
+        for (nome, preco) in con:
+            print(nome, preco)
+
+        print('____________________________________________')
+        print(f'\nVocê adicionou {nome} ao seu pedido\n')
+        print('____________________________________________')
+
+        conta.calculoValor(preco, nome)
+
+    except Exception as erro:
+        print('____________________________________________')
+        print('\nDigite uma opção válida\n')
+        print('____________________________________________')
+        lanches.selecionarLanches()
+
 
 #Consultar os dados do DB
 def selecionarBebida():
@@ -72,25 +94,5 @@ def selecionarSobremesa():
     except Exception as erro:
         print(erro)
 
-def contaLanche(codigo):
-    try:
-        if codigo == -1:
-            cardapio.redirecionarCardapio()
-        sql = f"select nome, preco from lanche where codigo = '{codigo}'"
-        con.execute(sql)
 
-        for (nome, preco) in con:
-            print(nome, preco)
-
-        print('____________________________________________')
-        print(f'\nVocê adicionou {nome} ao seu pedido\n')
-        print('____________________________________________')
-
-        conta.calculoValor(preco, nome)
-
-    except Exception as erro:
-        print('____________________________________________')
-        print('\nDigite uma opção válida\n')
-        print('____________________________________________')
-        lanches.selecionarLanches()
 
