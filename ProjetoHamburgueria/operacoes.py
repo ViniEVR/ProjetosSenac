@@ -3,6 +3,8 @@ import conexao
 import conta
 import lanches
 import cardapio
+import sobremesas
+import bebidas
 
 db_connection = conexao.conectar() #Abrindo a conexão com o banco de dados
 con = db_connection.cursor()
@@ -76,8 +78,8 @@ def selecionarBebida():
         sql = "select * from bebida"
         con.execute(sql)
 
-        for(codigo, nome, ingredientes, preco) in con:
-            print(codigo, nome, ingredientes, preco)
+        for(codigo, nome, preco) in con:
+            print(codigo, nome, preco)
             print('\n')
     except Exception as erro:
         print(erro)
@@ -95,4 +97,48 @@ def selecionarSobremesa():
         print(erro)
 
 
+
+def contaBebida(codigo):
+    try:
+        if codigo == -1:
+            cardapio.redirecionarCardapio()
+        sql = f"select nome, preco from bebida where codigo = '{codigo}'"
+        con.execute(sql)
+
+        for (nome, preco) in con:
+            print(nome, preco)
+
+        print('____________________________________________')
+        print(f'\nVocê adicionou {nome} ao seu pedido\n')
+        print('____________________________________________')
+
+        conta.calculoValor(preco, nome)
+
+    except Exception as erro:
+        print('____________________________________________')
+        print('\nDigite uma opção válida\n')
+        print('____________________________________________')
+        bebidas.selecionarBebidas()
+
+def contaSobremesa(codigo):
+    try:
+        if codigo == -1:
+            cardapio.redirecionarCardapio()
+        sql = f"select nome, preco from sobremesa where codigo = '{codigo}'"
+        con.execute(sql)
+
+        for (nome, preco) in con:
+            print(nome, preco)
+
+        print('____________________________________________')
+        print(f'\nVocê adicionou {nome} ao seu pedido\n')
+        print('____________________________________________')
+
+        conta.calculoValor(preco, nome)
+
+    except Exception as erro:
+        print('____________________________________________')
+        print('\nDigite uma opção válida\n')
+        print('____________________________________________')
+        sobremesas.selecionarSobremesas()
 
