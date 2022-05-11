@@ -7,7 +7,6 @@ item = []
 this.valorConta = 0
 
 
-
 def calculoValor(precoItem, nomeItem):
     precoTotal.append(precoItem)
     item.append(nomeItem)

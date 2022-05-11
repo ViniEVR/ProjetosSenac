@@ -4,13 +4,15 @@ import bebidas
 import lanches
 import sobremesas
 import operacoes
+import  funcionario
 
 this.opcaoCardapio = 0
 def mostrarCardapio():
     print('1. Lanches\n' +
           '2. Bebidas\n' +
           '3. Sobremesas\n' +
-          '4. Pagar a conta e sair\n')
+          '4. Pagar a conta e sair\n' +
+          '5. Logar como funcionário\n')
 
     this.opcaoCardapio = int(input('Opção selecionada: '))#Coletando opçao do usuario
 
@@ -30,6 +32,9 @@ def redirecionarCardapio():
 
             elif this.opcaoCardapio == 4:
                 print(conta.contaComItens())
+
+            elif this.opcaoCardapio == 5:
+                print(funcionario.menu())
 
             else:
                 print('____________________________________________')

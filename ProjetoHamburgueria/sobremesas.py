@@ -3,7 +3,7 @@ import this
 import cardapio
 import operacoes
 
-this.opcaoSobremesas = 0
+this.opcaoSobremesa = 0
 
 def cardapioSobremesas():
     operacoes.selecionarSobremesa()
