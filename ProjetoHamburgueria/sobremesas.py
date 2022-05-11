@@ -8,8 +8,7 @@ this.opcaoSobremesas = 0
 def cardapioSobremesas():
     operacoes.selecionarSobremesa()
     print('-1 Voltar ao cardápio\n')
-
-    this.opcaoSobremesas = int(input('Opção selecionada: '))  # Coletando a sobremesa selecionado
+    this.opcaoSobremesa = int(input('Opção selecionada: '))  # Coletando a sobremesa selecionado
 
 def selecionarSobremesas():
     try:
@@ -22,3 +21,4 @@ def selecionarSobremesas():
         print('\nSelecione uma opção válida\n')
         print('____________________________________________')
         selecionarSobremesas()
+
