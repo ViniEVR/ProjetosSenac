@@ -1,6 +1,7 @@
 import mysql.connector
 import conexao
 import conta
+import funcionario
 import lanches
 import cardapio
 import sobremesas
@@ -9,20 +10,24 @@ import bebidas
 db_connection = conexao.conectar() #Abrindo a conexão com o banco de dados
 con = db_connection.cursor()
 
-def inserirLanches():
+def inserirLanches(nome, ingredientes, preco):
     try:
-        sql = "lanches() values('','{}','{}','{}','{}')".format()
+        sql = f"INSERT INTO lanche(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
         con.execute(sql) #Prepara o comando para ser executado
         db_connection.commit() #Executa o comando no banco de dados
         print(con.rowcount, "")
     except Exception as erro:
         print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()
 
 def inserirBebidas():
     try:
-        sql = "bebidas() values('','{}','{}','{}','{}')".format()
-        con.execute(sql) #Prepara o comando para ser executado
-        db_connection.commit() #Executa o comando no banco de dados
+        sql = f"INSERT INTO bebida(codigo, nome, preco) values('','{nome}','{preco}')"
+        con.execute(sql)  # Prepara o comando para ser executado
+        db_connection.commit()  # Executa o comando no banco de dados
         print(con.rowcount, "")
     except Exception as erro:
         print(erro)
