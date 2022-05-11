@@ -15,7 +15,7 @@ def inserirLanches(nome, ingredientes, preco):
         sql = f"INSERT INTO lanche(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
         con.execute(sql) #Prepara o comando para ser executado
         db_connection.commit() #Executa o comando no banco de dados
-        print(con.rowcount, "")
+        print("Lanche cadastrado com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
@@ -23,20 +23,33 @@ def inserirLanches(nome, ingredientes, preco):
         print('____________________________________________')
         funcionario.menu()
 
-def inserirBebidas():
+def excluirLanche(codigo):
     try:
-        sql = f"INSERT INTO bebida(codigo, nome, preco) values('','{nome}','{preco}')"
+        sql = "DELETE FROM lanche WHERE codigo = {};)".format(codigo)
+        con.execute(sql) #Prepara o comando para ser executado
+        db_connection.commit() #Executa o comando no banco de dados
+        print("Lanche deletado com sucesso!")
+    except Exception as erro:
+        print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()
+
+def inserirBebidas(nome, preco):
+    try:
+        sql = f"INSERT INTO bebida(codigo, nome, preco) VALUES('','{nome}','{preco}')"
         con.execute(sql)  # Prepara o comando para ser executado
         db_connection.commit()  # Executa o comando no banco de dados
-        print(con.rowcount, "")
+        print("Bebida cadastrada com sucesso!")
     except Exception as erro:
         print(erro)
 
-def inserirSobremesas():
+def inserirSobremesas(nome, ingredientes, preco):
     try:
-        sql = "sobremesas() values('','{}','{}','{}','{}')".format()
-        con.execute(sql) #Prepara o comando para ser executado
-        db_connection.commit() #Executa o comando no banco de dados
+        sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
+        con.execute(sql)  # Prepara o comando para ser executado
+        db_connection.commit()  # Executa o comando no banco de dados
         print(con.rowcount, "")
     except Exception as erro:
         print(erro)

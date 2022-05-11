@@ -1,10 +1,11 @@
 import this
 import operacoes
+import lanches
 
 this.opcaoFuncionario = 0
 
 def mostrarMenu():
-    print('1.Cadastrar lanche\n'
+    print('\n\n\n1.Cadastrar lanche\n'
           '2.Excluir lanche\n'
           '3.Cadastrar bebida\n'
           '4.Excluir bebida\n'
@@ -23,4 +24,12 @@ def menu():
             preco = int(input('\nDigite o valor: R$'))
 
             operacoes.inserirLanches(nome, ingredientes, preco)
+
+        elif this.opcaoFuncionario == 2:
+            operacoes.selecionarLanche()
+            this.codigo = int(input('Digite o número do lanche a ser deletado: '))
+
+            operacoes.excluirLanche(this.codigo)
+
+
 
