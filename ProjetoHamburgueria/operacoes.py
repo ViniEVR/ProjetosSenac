@@ -200,3 +200,5 @@ def inserirFuncionario(nome, senha):
         print(con.rowcount, "Inserido!")
     except Exception as erro:
         print(erro)
+
+

@@ -12,13 +12,14 @@ def mostrarCardapio():
           '2. Bebidas\n' +
           '3. Sobremesas\n' +
           '4. Pagar a conta e sair\n' +
-          '5. Logar como funcionário\n')
+          '5. Logar como funcionário\n'
+          '-1.Sair')
 
     this.opcaoCardapio = int(input('Opção selecionada: '))#Coletando opçao do usuario
 
 def redirecionarCardapio():
     try:
-        while this.opcaoCardapio != 4:
+        while this.opcaoCardapio != -1:
             mostrarCardapio()
 
             if this.opcaoCardapio == 1:
@@ -35,6 +36,9 @@ def redirecionarCardapio():
 
             elif this.opcaoCardapio == 5:
                 print(funcionario.logar())
+
+            elif this.opcaoCardapio == -1:
+                print('Obrigado por utilizar o programa!')
 
             else:
                 print('____________________________________________')
