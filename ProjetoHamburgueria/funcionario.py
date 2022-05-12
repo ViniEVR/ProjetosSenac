@@ -72,6 +72,11 @@ def menu():
             senha = input()
             operacoes.inserirFuncionario(nome, senha)
 
+        else:
+            print('____________________________________________')
+            print('\nSelecione uma opção válida\n')
+            print('____________________________________________')
+            menu()
 
 
 
