@@ -50,7 +50,7 @@ def excluirBebida(codigo):
         sql = f"DELETE FROM bebida WHERE codigo = {codigo}"
         con.execute(sql) #Prepara o comando para ser executado
         db_connection.commit() #Executa o comando no banco de dados
-        print("Bebida deletado com sucesso!")
+        print("Bebida deletada com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
@@ -78,7 +78,7 @@ def excluirSobremesa(codigo):
         sql = f"DELETE FROM sobremesa WHERE codigo = {codigo}"
         con.execute(sql) #Prepara o comando para ser executado
         db_connection.commit() #Executa o comando no banco de dados
-        print("Sobremesa deletado com sucesso!")
+        print("Sobremesa deletada com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
