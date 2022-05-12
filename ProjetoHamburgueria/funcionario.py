@@ -31,5 +31,21 @@ def menu():
 
             operacoes.excluirLanche(this.codigo)
 
+        elif this.opcaoFuncionario == 5:
+            nome = input('Digite o nome da sobremesa: ')
+            ingredientes = input('\nDigite os ingredientes: ')
+            preco = int(input('\nDigite o valor: R$'))
+
+            operacoes.inserirSobremesas(nome, ingredientes, preco)
+
+
+        elif this.opcaoFuncionario == 7:
+            print('Digite o nome: ')
+            nome = input()
+            print('Digite a senha: ')
+            senha = input()
+            operacoes.inserirFuncionario(nome, senha)
+
+
 
 

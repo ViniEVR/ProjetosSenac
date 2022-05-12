@@ -22,3 +22,4 @@ def selecionarBebidas():
         print('\nSelecione uma opção válida\n')
         print('____________________________________________')
         selecionarBebidas()
+

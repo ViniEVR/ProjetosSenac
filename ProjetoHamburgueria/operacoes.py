@@ -50,9 +50,13 @@ def inserirSobremesas(nome, ingredientes, preco):
         sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
         con.execute(sql)  # Prepara o comando para ser executado
         db_connection.commit()  # Executa o comando no banco de dados
-        print(con.rowcount, "")
+        print(con.rowcount, "Sombremesa cadastrada com sucesso!")
     except Exception as erro:
         print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()
 
 #Consultar os dados do DB
 def selecionarLanche():
@@ -160,3 +164,11 @@ def contaSobremesa(codigo):
         print('____________________________________________')
         sobremesas.selecionarSobremesas()
 
+def inserirFuncionario(nome, senha):
+    try:
+        sql = "insert into funcionario(codigo, nome, senha) values('','{}','{}')".format(nome, senha)
+        con.execute(sql) #Prepara o comando para ser executado
+        db_connection.commit() #Executa o comando no banco de dados
+        print(con.rowcount, "Inserido!")
+    except Exception as erro:
+        print(erro)
