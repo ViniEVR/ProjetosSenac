@@ -4,6 +4,16 @@ import lanches
 
 this.opcaoFuncionario = 0
 
+def logar():
+    codigo = input('Digite o código: ')
+    senha = input('Digite a senha: ')
+
+    if codigo == '1' and senha == '1':
+        menu()
+    else:
+        print('\nDigite um código ou senha válidos.\n')
+        print('Ou então selecione um item do menu: \n\n')
+
 def mostrarMenu():
     print('\n\n\n1.Cadastrar lanche\n'
           '2.Excluir lanche\n'

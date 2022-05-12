@@ -34,7 +34,7 @@ def redirecionarCardapio():
                 print(conta.contaComItens())
 
             elif this.opcaoCardapio == 5:
-                print(funcionario.menu())
+                print(funcionario.logar())
 
             else:
                 print('____________________________________________')
