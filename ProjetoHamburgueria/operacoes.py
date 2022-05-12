@@ -25,7 +25,7 @@ def inserirLanches(nome, ingredientes, preco):
 
 def excluirLanche(codigo):
     try:
-        sql = "DELETE FROM lanche WHERE codigo = {};)".format(codigo)
+        sql = f"DELETE FROM lanche WHERE codigo = {codigo}"
         con.execute(sql) #Prepara o comando para ser executado
         db_connection.commit() #Executa o comando no banco de dados
         print("Lanche deletado com sucesso!")
@@ -50,7 +50,7 @@ def inserirSobremesas(nome, ingredientes, preco):
         sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
         con.execute(sql)  # Prepara o comando para ser executado
         db_connection.commit()  # Executa o comando no banco de dados
-        print(con.rowcount, "Sombremesa cadastrada com sucesso!")
+        print("Sombremesa cadastrada com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
