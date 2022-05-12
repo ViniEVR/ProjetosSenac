@@ -45,12 +45,40 @@ def inserirBebidas(nome, preco):
     except Exception as erro:
         print(erro)
 
+def excluirBebida(codigo):
+    try:
+        sql = f"DELETE FROM bebida WHERE codigo = {codigo}"
+        con.execute(sql) #Prepara o comando para ser executado
+        db_connection.commit() #Executa o comando no banco de dados
+        print("Bebida deletado com sucesso!")
+    except Exception as erro:
+        print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()
+
+
+
 def inserirSobremesas(nome, ingredientes, preco):
     try:
         sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
         con.execute(sql)  # Prepara o comando para ser executado
         db_connection.commit()  # Executa o comando no banco de dados
         print("Sombremesa cadastrada com sucesso!")
+    except Exception as erro:
+        print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()
+
+def excluirSobremesa(codigo):
+    try:
+        sql = f"DELETE FROM sobremesa WHERE codigo = {codigo}"
+        con.execute(sql) #Prepara o comando para ser executado
+        db_connection.commit() #Executa o comando no banco de dados
+        print("Sobremesa deletado com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')

@@ -25,7 +25,7 @@ def redirecionarCardapio():
                 print(lanches.selecionarLanches())
 
             elif this.opcaoCardapio == 2:
-                print(bebidas.selecionarBebida())
+                print(bebidas.selecionarBebidas())
 
             elif this.opcaoCardapio == 3:
                 print(sobremesas.selecionarSobremesas())

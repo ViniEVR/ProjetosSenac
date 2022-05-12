@@ -37,12 +37,22 @@ def menu():
 
             operacoes.inserirBebidas(nome, preco)
 
+        elif this.opcaoFuncionario == 4:
+            operacoes.selecionarBebida()
+            this.codigo = int(input('Digite o número da bebida a ser deletado: '))
+
+            operacoes.excluirBebida(this.codigo)
+
         elif this.opcaoFuncionario == 5:
             nome = input('Digite o nome da sobremesa: ')
             ingredientes = input('\nDigite os ingredientes: ')
             preco = int(input('\nDigite o valor: R$'))
 
             operacoes.inserirSobremesas(nome, ingredientes, preco)
+
+        elif this.opcaoFuncionario == 6:
+            operacoes.selecionarBebida()
+            this.codigo = int(input('Digite o número da sobremesa a ser deletado: '))
 
 
         elif this.opcaoFuncionario == 7:
