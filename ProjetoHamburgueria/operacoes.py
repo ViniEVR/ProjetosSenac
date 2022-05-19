@@ -12,10 +12,16 @@ con = db_connection.cursor()
 
 def inserirLanches(nome, ingredientes, preco):
     try:
-        sql = f"INSERT INTO lanche(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
-        con.execute(sql) #Prepara o comando para ser executado
-        db_connection.commit() #Executa o comando no banco de dados
-        print("Lanche cadastrado com sucesso!")
+        if preco < 0:
+            print('____________________________________________')
+            print('\nDigite um valor válido\n')
+            print('____________________________________________')
+            funcionario.mostrarMenu()
+        else:
+            sql = f"INSERT INTO lanche(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
+            con.execute(sql) #Prepara o comando para ser executado
+            db_connection.commit() #Executa o comando no banco de dados
+            print("Lanche cadastrado com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
@@ -38,10 +44,16 @@ def excluirLanche(codigo):
 
 def inserirBebidas(nome, preco):
     try:
-        sql = f"INSERT INTO bebida(codigo, nome, preco) VALUES('','{nome}','{preco}')"
-        con.execute(sql)  # Prepara o comando para ser executado
-        db_connection.commit()  # Executa o comando no banco de dados
-        print("Bebida cadastrada com sucesso!")
+        if preco < 0:
+            print('____________________________________________')
+            print('\nDigite um valor válido\n')
+            print('____________________________________________')
+            funcionario.mostrarMenu()
+        else:
+            sql = f"INSERT INTO bebida(codigo, nome, preco) VALUES('','{nome}','{preco}')"
+            con.execute(sql)  # Prepara o comando para ser executado
+            db_connection.commit()  # Executa o comando no banco de dados
+            print("Bebida cadastrada com sucesso!")
     except Exception as erro:
         print(erro)
 
@@ -62,10 +74,16 @@ def excluirBebida(codigo):
 
 def inserirSobremesas(nome, ingredientes, preco):
     try:
-        sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
-        con.execute(sql)  # Prepara o comando para ser executado
-        db_connection.commit()  # Executa o comando no banco de dados
-        print("Sombremesa cadastrada com sucesso!")
+        if preco < 0:
+            print('____________________________________________')
+            print('\nDigite um valor válido\n')
+            print('____________________________________________')
+            funcionario.mostrarMenu()
+        else:
+            sql = f"INSERT INTO sobremesa(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
+            con.execute(sql)  # Prepara o comando para ser executado
+            db_connection.commit()  # Executa o comando no banco de dados
+            print("Sombremesa cadastrada com sucesso!")
     except Exception as erro:
         print(erro)
         print('____________________________________________')
