@@ -44,7 +44,7 @@ def menu():
 
             elif this.opcaoFuncionario == 3:
                 nome = input('Digite o nome da bebida: ')
-                preco = input('Digite o valor: R$')
+                preco = int(input('Digite o valor: R$'))
 
                 operacoes.inserirBebidas(nome, preco)
 
