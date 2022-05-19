@@ -1,7 +1,9 @@
 import this
-
+import sys
 
 #Classe responsável por calcular o valor da conta
+import cardapio
+
 precoTotal = []
 item = []
 this.valorConta = 0
@@ -19,6 +21,19 @@ def calcularValorTotal():
     print('\nValor da conta até o momento \nR$:' + this.valorConta)
     print('____________________________________________')
 
+def finalPrograma(opcao):
+    if opcao == 1:
+        print('Obrigado por comprar conosco!')
+
+    elif opcao == 2:
+        print('\n\n\n')
+        cardapio.redirecionarCardapio()
+    else:
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        finalPrograma()
+
 def contaComItens():
     try:
         j = 0
@@ -29,7 +44,11 @@ def contaComItens():
         print('____________________________________________')
         print('\nValor da sua conta é de \nR$:' + this.valorConta)
         print('____________________________________________')
-        input('Digite enter para pagar: ')
+        opcao = int(input('1.Pagar \n' +
+              '2.Voltar\n' +
+                'Opcao selecionada: '           ))
+        finalPrograma(opcao)
+
 
     except:
         j = 0

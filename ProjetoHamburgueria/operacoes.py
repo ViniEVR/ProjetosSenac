@@ -7,6 +7,7 @@ import cardapio
 import sobremesas
 import bebidas
 
+
 db_connection = conexao.conectar() #Abrindo a conexão com o banco de dados
 con = db_connection.cursor()
 
