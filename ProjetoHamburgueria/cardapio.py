@@ -7,6 +7,7 @@ import operacoes
 import  funcionario
 
 this.opcaoCardapio = 0
+
 def mostrarCardapio():
     print('1. Lanches\n' +
           '2. Bebidas\n' +
@@ -37,6 +38,7 @@ def redirecionarCardapio():
 
             elif this.opcaoCardapio == 5:
                 print(funcionario.logar())
+
 
             elif this.opcaoCardapio == -1:
                 print('Obrigado por utilizar o programa!')

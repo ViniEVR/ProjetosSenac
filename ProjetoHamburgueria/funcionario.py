@@ -1,15 +1,20 @@
 import this
+
+import cardapio
 import operacoes
 import lanches
 
 this.opcaoFuncionario = 0
 
 def logar():
-    codigo = input('Digite o código: ')
-    senha = input('Digite a senha: ')
+    this.codigo = 0
+    this.senha = 0
+    this.codigo = input('Digite o código: ')
+    this.senha = input('Digite a senha: ')
+    menuFuncionario()
 
-    if codigo == '1' and senha == '1':
-        menu()
+    if this.codigo == "1" and this.senha == "1":
+        print()
     else:
         print('\nDigite um código ou senha válidos.\n')
         print('Ou então selecione um item do menu: \n\n')
@@ -25,8 +30,9 @@ def mostrarMenu():
           '8.Retornar ao menu anterior')
     this.opcaoFuncionario = int(input('Opção selecionada: '))
 
-def menu():
+def menuFuncionario():
     try:
+        this.opcaoFuncionario = 0
         while this.opcaoFuncionario != 8:
             mostrarMenu()
             if this.opcaoFuncionario == 1:
@@ -73,16 +79,20 @@ def menu():
                 senha = input()
                 operacoes.inserirFuncionario(nome, senha)
 
+            elif this.opcaoFuncionario == 8:
+                print('\n\n\n')
+                cardapio.redirecionarCardapio()
+
             else:
                 print('____________________________________________')
                 print('\nSelecione uma opção válida\n')
                 print('____________________________________________')
-                menu()
+                menuFuncionario()
     except:
         print('____________________________________________')
         print('\nSelecione uma opção válida\n')
         print('____________________________________________')
-        menu()
+        menuFuncionario()
 
 
 
