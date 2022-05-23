@@ -213,10 +213,15 @@ def contaSobremesa(codigo):
 
 def inserirFuncionario(nome, senha):
     try:
-        sql = "insert into funcionario(codigo, nome, senha) values('','{}','{}')".format(nome, senha)
-        con.execute(sql) #Prepara o comando para ser executado
-        db_connection.commit() #Executa o comando no banco de dados
-        print(con.rowcount, "Inserido!")
+        if nome == "" or senha == "":
+            print('____________________________________________')
+            print('\nDigite um nome e uma senha válidos\n')
+            print('____________________________________________')
+        else:
+            sql = "insert into funcionario(codigo, nome, senha) values('','{}','{}')".format(nome, senha)
+            con.execute(sql) #Prepara o comando para ser executado
+            db_connection.commit() #Executa o comando no banco de dados
+            print(con.rowcount, "Inserido!")
     except Exception as erro:
         print(erro)
 

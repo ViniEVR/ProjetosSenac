@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01c4ee35-2124-473f-91b8-077e6f7bfba0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoHamburgueria/cardapio.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoHamburgueria/cardapio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjetoHamburgueria/funcionario.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoHamburgueria/funcionario.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjetoHamburgueria/operacoes.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjetoHamburgueria/operacoes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +24,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ProjetoHamburgueria" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ProjetosSenac" />
