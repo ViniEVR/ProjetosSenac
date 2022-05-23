@@ -13,7 +13,7 @@ con = db_connection.cursor()
 
 def inserirLanches(nome, ingredientes, preco):
     try:
-        if preco < 0:
+        if preco <= 0 or nome == "" or ingredientes == "":
             print('____________________________________________')
             print('\nDigite um valor válido\n')
             print('____________________________________________')
@@ -45,7 +45,7 @@ def excluirLanche(codigo):
 
 def inserirBebidas(nome, preco):
     try:
-        if preco < 0:
+        if preco <= 0 or nome == "":
             print('____________________________________________')
             print('\nDigite um valor válido\n')
             print('____________________________________________')
@@ -75,7 +75,7 @@ def excluirBebida(codigo):
 
 def inserirSobremesas(nome, ingredientes, preco):
     try:
-        if preco < 0:
+        if preco <= 0 or nome == "" or ingredientes == "":
             print('____________________________________________')
             print('\nDigite um valor válido\n')
             print('____________________________________________')
