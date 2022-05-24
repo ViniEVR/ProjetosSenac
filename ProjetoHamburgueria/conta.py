@@ -32,7 +32,7 @@ def finalPrograma(opcao):
         print('____________________________________________')
         print('\nDigite um valor válido\n')
         print('____________________________________________')
-        finalPrograma()
+        contaComItens()
 
 def contaComItens():
     try:
@@ -47,6 +47,8 @@ def contaComItens():
         opcao = int(input('1.Pagar \n' +
               '2.Voltar\n' +
                 'Opcao selecionada: '           ))
+
+
         finalPrograma(opcao)
 
 

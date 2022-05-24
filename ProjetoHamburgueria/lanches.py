@@ -1,6 +1,4 @@
-import conta
 import this
-import cardapio
 import operacoes
 
 this.opcaoLanche = 0
