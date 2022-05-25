@@ -11,10 +11,9 @@ def logar():
     this.senha = 0
     this.codigo = input('Digite o código: ')
     this.senha = input('Digite a senha: ')
-    menuFuncionario()
 
     if this.codigo == "1" and this.senha == "1":
-        print()
+        menuFuncionario()
     else:
         print('\nDigite um código ou senha válidos.\n')
         print('Ou então selecione um item do menu: \n\n')
