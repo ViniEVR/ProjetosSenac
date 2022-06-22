@@ -14,8 +14,14 @@ con = db_connection.cursor()
 def inserirLanches(nome, ingredientes, preco):
     try:
         if preco <= 0 or nome == "" or ingredientes == "":
+
+            while nome == "" or nome == " ":
+                nome = input('Digite o nome do lanche: ')
+                ingredientes = input('\nDigite os ingredientes: ')
+                preco = int(input('\nDigite o valor: R$'))
+
             print('____________________________________________')
-            print('\nDigite um valor válido\n')
+            print('\nDigite valores válidos\n')
             print('____________________________________________')
             funcionario.mostrarMenu()
         else:
@@ -26,7 +32,7 @@ def inserirLanches(nome, ingredientes, preco):
     except Exception as erro:
         print(erro)
         print('____________________________________________')
-        print('\nDigite um valor válido\n')
+        print('\nDigite valores válidos\n')
         print('____________________________________________')
         funcionario.menu()
 
@@ -39,7 +45,7 @@ def excluirLanche(codigo):
     except Exception as erro:
         print(erro)
         print('____________________________________________')
-        print('\nDigite um valor válido\n')
+        print('\nDigite valores válidos\n')
         print('____________________________________________')
         funcionario.menu()
 
@@ -47,7 +53,7 @@ def inserirBebidas(nome, preco):
     try:
         if preco <= 0 or nome == "":
             print('____________________________________________')
-            print('\nDigite um valor válido\n')
+            print('\nDigite valores válidos\n')
             print('____________________________________________')
             funcionario.mostrarMenu()
         else:
@@ -67,7 +73,7 @@ def excluirBebida(codigo):
     except Exception as erro:
         print(erro)
         print('____________________________________________')
-        print('\nDigite um valor válido\n')
+        print('\nDigite valores válidos\n')
         print('____________________________________________')
         funcionario.menu()
 
@@ -77,7 +83,7 @@ def inserirSobremesas(nome, ingredientes, preco):
     try:
         if preco <= 0 or nome == "" or ingredientes == "":
             print('____________________________________________')
-            print('\nDigite um valor válido\n')
+            print('\nDigite valores válidos\n')
             print('____________________________________________')
             funcionario.mostrarMenu()
         else:
@@ -88,7 +94,7 @@ def inserirSobremesas(nome, ingredientes, preco):
     except Exception as erro:
         print(erro)
         print('____________________________________________')
-        print('\nDigite um valor válido\n')
+        print('\nDigite valores válidos\n')
         print('____________________________________________')
         funcionario.menu()
 
