@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
+import this
 import cardapio
 import conexao
 import operacoes
-import this
 this.codigo = 0
 this.nome = ""
 this.telefone = ""

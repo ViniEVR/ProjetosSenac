@@ -1,3 +1,12 @@
-body {
-    color: aliceblue;
+#img{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/mafe-estudio-LV2p9Utbkbw-unsplash.jpg');
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body h1 {
+    color: lawngreen;
 }
