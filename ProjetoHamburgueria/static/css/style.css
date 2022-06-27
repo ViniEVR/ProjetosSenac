@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 #img{
+    
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image/mafe-estudio-LV2p9Utbkbw-unsplash.jpg');
     position: relative;
     background-repeat: no-repeat;
@@ -8,5 +10,8 @@
 }
 
 body h1 {
-    color: lawngreen;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+    color: red;
+    -webkit-text-stroke: 10px, black;
 }

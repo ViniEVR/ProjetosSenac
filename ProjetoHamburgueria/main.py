@@ -24,6 +24,11 @@ def menu():
         this.dados    = operacoes.inserir(this.nome, this.telefone, this.endereco, this.data)
     return render_template('index.html', titulo='Página Principal', resultado=this.dados)
 
+@inicio.route('/funcionario.html', methods = ['GET', 'POST'])
+def menuFuncionario():
+    return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+
+
 if __name__ == "__main__":
     inicio.run(debug=True, port=5000)
     #conexao.conectar()
