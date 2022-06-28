@@ -32,9 +32,18 @@ def menuFuncionario():
     if request.method == 'POST':
         this.lanche = request.form['cLanche']
         this.ingredienteLanche = request.form['cIngredienteLanche']
-        this.valorLanche = int(request.form['cValorLanche'])
-        this.dados = operacoes.inserirLanches(this.lanche, this.ingredientes, this.valorLanche)
+        this.valorLanche = float(request.form['cValorLanche'])
+        this.dados = operacoes.inserirLanches(this.lanche, this.ingredienteLanche, this.valorLanche)
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+
+@inicio.route('/teste.html', methods = ['GET', 'POST'])
+def testinho():
+    if request.method == 'POST':
+        this.lanche = request.form['cLanche']
+        this.ingredienteLanche = request.form['cIngredienteLanche']
+        this.valorLanche = request.form['cValorLanche']
+        this.dados = operacoes.inserirLanches(this.lanche, this.ingredientes, float(this.valorLanche))
+    return render_template('teste.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 
 if __name__ == "__main__":

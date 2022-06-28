@@ -30,10 +30,7 @@ def inserirLanches(nome, ingredientes, preco):
             db_connection.commit() #Executa o comando no banco de dados
             print("Lanche cadastrado com sucesso!")
     except Exception as erro:
-        print(erro)
-        print('____________________________________________')
-        print('\nDigite valores válidos\n')
-        print('____________________________________________')
+        return erro
         funcionario.menu()
 
 def excluirLanche(codigo):
