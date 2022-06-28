@@ -11,6 +11,6 @@ def conectar():
         elif error.errno == errorcode.ER_BAD_DB_ERROR: #Caso haja um erro de usuário
             print('Nome de usuário  ou senha errado!')
         else:
-            print(error)
+            return error
     else:
         db_connection.close()

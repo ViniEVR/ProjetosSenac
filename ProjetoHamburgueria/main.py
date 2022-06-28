@@ -10,6 +10,9 @@ this.endereco = ""
 this.data = ""
 this.dados = ""
 this.mensagem = ""
+this.lanche = ""
+this.ingredienteLanche = ""
+this.valorLanche = 0
 
 
 inicio = Flask(__name__) #Representando uma variável do tipo flask
@@ -26,10 +29,15 @@ def menu():
 
 @inicio.route('/funcionario.html', methods = ['GET', 'POST'])
 def menuFuncionario():
+    if request.method == 'POST':
+        this.lanche = request.form['cLanche']
+        this.ingredienteLanche = request.form['cIngredienteLanche']
+        this.valorLanche = int(request.form['cValorLanche'])
+        this.dados = operacoes.inserirLanches(this.lanche, this.ingredientes, this.valorLanche)
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 
 if __name__ == "__main__":
     inicio.run(debug=True, port=5000)
-    #conexao.conectar()
+    conexao.conectar()
     #cardapio.redirecionarCardapio()
