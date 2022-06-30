@@ -45,3 +45,24 @@ def consultarTudo(cod):
     except Exception as erro:
         return erro
 
+
+def atualizar(codigo, campo, novoDado):
+    try:
+        sql = "update pessoa set {} = '{}' where codigo = '{}".format(campo, novoDado, codigo)
+        con.execute(sql)
+        db_connection.commit()
+        return "{} Atualizar!".format(con.rowcount)
+
+    except Exception as erro:
+        return erro
+
+
+def deletar(codigo):
+    try:
+        sql = "delete from pessoa where codigo = '{}'".format(codigo)
+        con.execute(sql)
+        db_connection.commit()
+        return "{} deletado!".format(con.rowcount)
+
+    except Exception as erro:
+        return erro

@@ -13,6 +13,8 @@ this.mensagem = ""
 this.lanche = ""
 this.ingredienteLanche = ""
 this.valorLanche = 0
+this.valorBebida = 0
+this.bebida = 0
 
 
 inicio = Flask(__name__) #Representando uma variável do tipo flask
@@ -37,12 +39,20 @@ def menuFuncionario():
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 @inicio.route('/teste.html', methods = ['GET', 'POST'])
-def testinho():
+def cadastroLanche():
     if request.method == 'POST':
         this.lanche = request.form['cLanche']
         this.ingredienteLanche = request.form['cIngredienteLanche']
         this.valorLanche = request.form['cValorLanche']
         this.dados = operacoes.inserirLanches(this.lanche, this.ingredientes, float(this.valorLanche))
+    return render_template('teste.html', titulo='Funcionário - ADM', resultado=this.dados)
+
+@inicio.route('/teste.html', methods = ['GET', 'POST'])
+def cadastroBebida():
+    if request.method == 'POST':
+        this.bebida = request.form['cBebida']
+        this.valorBebida = request.form['cValorBebida']
+        this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
     return render_template('teste.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 
