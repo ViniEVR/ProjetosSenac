@@ -14,7 +14,8 @@ this.lanche = ""
 this.ingredienteLanche = ""
 this.valorLanche = 0
 this.valorBebida = 0
-this.bebida = 0
+this.bebida = ""
+this.cadastro = ""
 
 
 inicio = Flask(__name__) #Representando uma variável do tipo flask
@@ -32,20 +33,28 @@ def menu():
 @inicio.route('/funcionario.html', methods = ['GET', 'POST'])
 def menuFuncionario():
     if request.method == 'POST':
-        this.lanche = request.form['cLanche']
-        this.ingredienteLanche = request.form['cIngredienteLanche']
-        this.valorLanche = float(request.form['cValorLanche'])
-        this.dados = operacoes.inserirLanches(this.lanche, this.ingredienteLanche, this.valorLanche)
+        if request.form['cadastrar']  == '1':
+            this.lanche = request.form['cLanche']
+            this.ingredienteLanche = request.form['cIngredienteLanche']
+            this.valorLanche = float(request.form['cValorLanche'])
+            this.dados = operacoes.inserirLanches(this.lanche, this.ingredienteLanche, this.valorLanche)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+        elif  request.form['cadastrar'] == '2':
+            this.bebida = request.form['cBebida']
+            this.valorBebida = request.form['cValorBebida']
+            this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+        else:
+            return render_template('notFound.html')
+    return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+    
+def cadastroBebida():
+    if request.method == 'POST':
+        this.bebida = request.form['cBebida']
+        this.valorBebida = request.form['cValorBebida']
+        this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
 
-@inicio.route('/teste.html', methods = ['GET', 'POST'])
-def cadastroLanche():
-    if request.method == 'POST':
-        this.lanche = request.form['cLanche']
-        this.ingredienteLanche = request.form['cIngredienteLanche']
-        this.valorLanche = request.form['cValorLanche']
-        this.dados = operacoes.inserirLanches(this.lanche, this.ingredientes, float(this.valorLanche))
-    return render_template('teste.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 @inicio.route('/teste.html', methods = ['GET', 'POST'])
 def cadastroBebida():
