@@ -16,6 +16,11 @@ this.valorLanche = 0
 this.valorBebida = 0
 this.bebida = ""
 this.cadastro = ""
+this.ingredienteSobremesa = ""
+this.valorSobremesa = 0
+this.sobremesa = ""
+this.Funcionario = ""
+this.senhaFuncionario = ""
 
 
 inicio = Flask(__name__) #Representando uma variável do tipo flask
@@ -43,6 +48,17 @@ def menuFuncionario():
             this.bebida = request.form['cBebida']
             this.valorBebida = request.form['cValorBebida']
             this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+        elif  request.form['cadastrar'] == '3':
+            this.sobremesa = request.form['cSobremesa']
+            this.ingredienteSobremesa = request.form['cIngredienteSobremesa']
+            this.valorSobremesa = float (request.form['cValorSobremesa'])
+            this.dados = operacoes.inserirSobremesas(this.sobremesa, this.ingredienteSobremesa, this.valorSobremesa)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+        elif  request.form['cadastrar'] == '4':
+            this.Funcionario = request.form['cFuncionario']
+            this.senhaFuncionario = request.form['cSenhaFuncionario']
+            this.dados = operacoes.inserirFuncionario(this.Funcionario, this.senhaFuncionario)
             return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
         else:
             return render_template('notFound.html')
