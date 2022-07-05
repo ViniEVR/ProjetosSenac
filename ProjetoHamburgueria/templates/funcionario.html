@@ -48,6 +48,32 @@
             <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalLanche" >Cadastrar Lanche</button>
         </form>
 
+        <form action="./funcionario.html" method="POST">
+          <div  class="modal fade" id="modalExcluirLanche" tabindex="-1" aria-labelledby="modalExcluirLanche" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalExcluirLanche">Excluir Lanche</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Codigo:</label>
+                        <input type="number" class="form-control" id="cCodigo" name="cCodigo" placeholder="Código do Lanche">
+                      </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary"  name="cadastrar" value="2">Excluir</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirLanche" name="cadastrar" id="cadastrar" value="2" >Excluir Lanche</button>
+      </form>
+
           <form action="./funcionario.html" method="POST">
                 <div  class="modal fade" id="modalBebida" tabindex="-1" aria-labelledby="modalBebida" aria-hidden="true">
                   <div class="modal-dialog">
@@ -70,13 +96,39 @@
                       </div>
                       <div class="modal-footer">
                         <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary"  name="cadastrar" value="2">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary"  name="cadastrar" value="3">Cadastrar</button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalBebida" id="cadastrar" name="cadastrar" value="2" >Cadastrar Bebida</button>
+                <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalBebida" id="cadastrar" name="cadastrar" value="3" >Cadastrar Bebida</button>
             </form>
+
+            <form action="./funcionario.html" method="POST">
+              <div  class="modal fade" id="modalExcluirBebida" tabindex="-1" aria-labelledby="modalExcluirBebida" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalExcluirBebida">Excluir Bebida</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Codigo:</label>
+                            <input type="number" class="form-control" id="cCodigo" name="cCodigo" placeholder="Código da Bebida">
+                          </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary"  name="cadastrar" value="4">Excluir</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirBebida" name="cadastrar" id="cadastrar" value="4" >Excluir Bebida</button>
+          </form>
 
             <div style="margin-top: 30px;" class="d-grid gap-4 justify-content-center">
               <form action="./funcionario.html" method="POST">
@@ -105,13 +157,39 @@
                           </div>
                           <div class="modal-footer">
                             <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" name="cadastrar" value="3" >Cadastrar</button>
+                            <button type="submit" class="btn btn-primary" name="cadastrar" value="5" >Cadastrar</button>
                           </div>
                         </div>
                       </div>
                     </div>
                     <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalSobremesa" >Cadastrar Sobremesa</button>
                 </form>
+
+                <form action="./funcionario.html" method="POST">
+                  <div  class="modal fade" id="modalExcluirSobremesa" tabindex="-1" aria-labelledby="modalExcluirSobremesa" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalExcluirSobremesa">Excluir Sobremesa</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Codigo:</label>
+                                <input type="number" class="form-control" id="cCodigo" name="cCodigo" placeholder="Código da Sobremesa">
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary"  name="cadastrar" value="6">Excluir</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirSobremesa" name="cadastrar" id="cadastrar" value="6" >Excluir Sobremesa</button>
+              </form>
 
                 <form action="./funcionario.html" method="POST">
                   <div  class="modal fade" id="modalFuncionario" tabindex="-1" aria-labelledby="modalFuncionario" aria-hidden="true">
@@ -135,17 +213,40 @@
                         </div>
                         <div class="modal-footer">
                           <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary"  name="cadastrar" value="4">Cadastrar</button>
+                          <button type="submit" class="btn btn-primary"  name="cadastrar" value="7">Cadastrar</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalFuncionario" name="cadastrar" id="cadastrar" value="4" >Cadastrar Funcionário</button>
+                  <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalFuncionario" name="cadastrar" id="cadastrar" value="7" >Cadastrar Funcionário</button>
               </form>
 
-        <button type="button" class="btn btn-warning btn-lg">Excluir Lanche</button>
-        <button type="button" class="btn btn-warning btn-lg">Excluir Bebida</button>
-        <button type="button" class="btn btn-warning btn-lg">Excluir Sobremesa</button>
+              <form action="./funcionario.html" method="POST">
+                <div  class="modal fade" id="modalExcluirFuncionario" tabindex="-1" aria-labelledby="modalExcluirFuncionario" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalExcluirFuncionario">Excluir Funcionário</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Codigo:</label>
+                              <input type="number" class="form-control" id="cCodigo" name="cCodigo" placeholder="Código do Funcionário">
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary"  name="cadastrar" value="8">Excluir</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirFuncionario" name="cadastrar" id="cadastrar" value="8" >Excluir Funcionario</button>
+            </form>
+
         <a href="/"> <button type="button" class="btn btn-warning btn-lg">Retornar ao menu anterior</button></a>
     </div>
 

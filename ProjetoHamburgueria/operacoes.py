@@ -228,4 +228,17 @@ def inserirFuncionario(nome, senha):
     except Exception as erro:
         print(erro)
 
+def excluirFuncionario(codigo):
+    try:
+        sql = f"DELETE FROM funcionario WHERE codigo = {codigo}"
+        con.execute(sql) #Prepara o comando para ser executado
+        db_connection.commit() #Executa o comando no banco de dados
+        print("Funcionario deletado com sucesso!")
+    except Exception as erro:
+        print(erro)
+        print('____________________________________________')
+        print('\nDigite um valor válido\n')
+        print('____________________________________________')
+        funcionario.menu()        
+
 

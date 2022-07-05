@@ -44,22 +44,38 @@ def menuFuncionario():
             this.valorLanche = float(request.form['cValorLanche'])
             this.dados = operacoes.inserirLanches(this.lanche, this.ingredienteLanche, this.valorLanche)
             return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
-        elif  request.form['cadastrar'] == '2':
+        elif request.form['cadastrar']  == '2':
+            this.codigo = request.form['cCodigo']
+            this.dados = operacoes.excluirLanche(this.codigo)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados) 
+        elif  request.form['cadastrar'] == '3':
             this.bebida = request.form['cBebida']
             this.valorBebida = request.form['cValorBebida']
             this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
             return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
-        elif  request.form['cadastrar'] == '3':
+        elif request.form['cadastrar']  == '4':
+            this.codigo = request.form['cCodigo']
+            this.dados = operacoes.excluirBebida(this.codigo)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)    
+        elif  request.form['cadastrar'] == '5':
             this.sobremesa = request.form['cSobremesa']
             this.ingredienteSobremesa = request.form['cIngredienteSobremesa']
             this.valorSobremesa = float (request.form['cValorSobremesa'])
             this.dados = operacoes.inserirSobremesas(this.sobremesa, this.ingredienteSobremesa, this.valorSobremesa)
             return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
-        elif  request.form['cadastrar'] == '4':
+        elif request.form['cadastrar']  == '6':
+            this.codigo = request.form['cCodigo']
+            this.dados = operacoes.excluirSobremesa(this.codigo)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)              
+        elif  request.form['cadastrar'] == '7':
             this.Funcionario = request.form['cFuncionario']
             this.senhaFuncionario = request.form['cSenhaFuncionario']
             this.dados = operacoes.inserirFuncionario(this.Funcionario, this.senhaFuncionario)
-            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)  
+        elif request.form['cadastrar']  == '8':
+            this.codigo = request.form['cCodigo']
+            this.dados = operacoes.excluirFuncionario(this.codigo)
+            return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)        
         else:
             return render_template('notFound.html')
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
