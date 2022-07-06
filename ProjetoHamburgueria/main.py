@@ -38,7 +38,7 @@ def menu():
 @inicio.route('/funcionario.html', methods = ['GET', 'POST'])
 def menuFuncionario():
     if request.method == 'POST':
-        if request.form['cadastrar']  == '1':
+        if request.form['cadastrar']  == "1":
             this.lanche = request.form['cLanche']
             this.ingredienteLanche = request.form['cIngredienteLanche']
             this.valorLanche = float(request.form['cValorLanche'])
