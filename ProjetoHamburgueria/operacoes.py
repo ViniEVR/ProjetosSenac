@@ -6,6 +6,9 @@ import lanches
 import cardapio
 import sobremesas
 import bebidas
+import this
+
+this.codigoLanche = ""
 
 
 db_connection = conexao.conectar() #Abrindo a conexão com o banco de dados
@@ -108,18 +111,50 @@ def excluirSobremesa(codigo):
         print('____________________________________________')
         funcionario.menu()
 
-#Consultar os dados do DB
-def selecionarLanche():
-    try:
-        sql = "select * from lanche"
-        con.execute(sql)
-        print('\n')
 
-        for(codigo, nome, ingredientes, preco) in con:
-            print(codigo, nome, ingredientes, preco)
-            print('\n')
+
+#Consultar os dados do DB
+def selecionarCodigoLanche():
+    vetorCodigo = []
+    try:
+        sql = "select codigo from lanche"
+        con.execute(sql)
+        
+        
+        this.nomeLanche = ""
+        this.ingredientesLanche = ""
+        this.precoLanche = ""
+        
+        for(codigo) in con:
+            this.msg = str(codigo).replace("(","")
+            this.msg = this.msg.replace(")", "")
+            this.msg = this.msg.replace(",","")
+            vetorCodigo.append(this.msg)
+
+        return vetorCodigo
+               
     except Exception as erro:
-        print(erro)
+        return (erro)
+
+def selecionarNomeLanche():
+    try:
+        vetorNome = []
+        sql = "select nome from lanche"
+        con.execute(sql)
+        
+        
+        this.nomeLanche = ""
+        this.ingredientesLanche = ""
+        this.precoLanche = ""
+        
+        for(nome) in con:
+            
+            vetorNome.append(nome)
+
+        return vetorNome
+               
+    except Exception as erro:
+        return (erro)
 
 def contaLanche(codigo):
     try:

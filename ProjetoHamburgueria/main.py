@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request
 import this
+
+from numpy import character
 import cardapio
 import conexao
 import operacoes
+import re
+this.flag = False
 this.codigo = 0
 this.nome = ""
 this.telefone = ""
@@ -21,6 +25,7 @@ this.valorSobremesa = 0
 this.sobremesa = ""
 this.Funcionario = ""
 this.senhaFuncionario = ""
+
 
 
 inicio = Flask(__name__) #Representando uma variável do tipo flask
@@ -86,15 +91,21 @@ def cadastroBebida():
         this.valorBebida = request.form['cValorBebida']
         this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
     return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+ 
 
 
 @inicio.route('/teste.html', methods = ['GET', 'POST'])
-def cadastroBebida():
-    if request.method == 'POST':
-        this.bebida = request.form['cBebida']
-        this.valorBebida = request.form['cValorBebida']
-        this.dados = operacoes.inserirBebidas(this.bebida, float(this.valorBebida))
-    return render_template('teste.html', titulo='Funcionário - ADM', resultado=this.dados)
+def teste():
+
+        if request.method == 'POST':
+            if(this.flag == False):
+                this.codigo = operacoes.selecionarCodigoLanche()
+                this.nome = operacoes.selecionarNomeLanche()
+            this.flag = True       
+        
+        return render_template('teste.html', titulo = 'Consultar', codigo = this.codigo, nome = this.nome)
+
+
 
 
 if __name__ == "__main__":
