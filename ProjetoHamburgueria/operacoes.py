@@ -119,11 +119,7 @@ def selecionarCodigoLanche():
     try:
         sql = "select codigo from lanche"
         con.execute(sql)
-        
-        
-        this.nomeLanche = ""
-        this.ingredientesLanche = ""
-        this.precoLanche = ""
+
         
         for(codigo) in con:
             this.msg = str(codigo).replace("(","")
@@ -139,19 +135,65 @@ def selecionarCodigoLanche():
 def selecionarNomeLanche():
     try:
         vetorNome = []
+        this.msg = ""
         sql = "select nome from lanche"
         con.execute(sql)
         
-        
-        this.nomeLanche = ""
-        this.ingredientesLanche = ""
-        this.precoLanche = ""
-        
         for(nome) in con:
+            this.msg = str(nome).replace("(","")
+            this.msg = this.msg.replace(")", "")
+            this.msg = this.msg.replace(",","")
+            this.msg = this.msg.replace("'","")
+            vetorNome.append(this.msg)
             
-            vetorNome.append(nome)
 
         return vetorNome
+               
+    except Exception as erro:
+        return (erro)
+
+def selecionarIngredienteLanche():
+    try:
+        vetorIngrediente = []
+        this.msg = ""
+        sql = "select ingredientes from lanche"
+        con.execute(sql)
+        
+        for(nome) in con:
+            this.msg = str(nome).replace("(","")
+            this.msg = this.msg.replace(")", "")
+            this.msg = this.msg.replace("'","")
+
+            vetorIngrediente.append(this.msg)
+            
+
+        return vetorIngrediente
+               
+    except Exception as erro:
+        return (erro)
+
+def selecionarValorLanche():
+    try:
+        vetorPreco = []
+        this.msg = ""
+        sql = "select preco from lanche"
+        con.execute(sql)
+
+        this.precoLanche = ""
+
+        
+        for(preco) in con:
+
+            this.msg = 'R$ ' + str(preco).replace("(","") + '0'
+            this.msg = this.msg.replace(")", "")
+            this.msg = this.msg.replace(",","")
+            this.msg = this.msg.replace("'","")
+            
+
+            vetorPreco.append(this.msg)
+            
+
+        return vetorPreco
                
     except Exception as erro:
         return (erro)

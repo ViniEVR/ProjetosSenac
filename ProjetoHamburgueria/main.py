@@ -101,9 +101,11 @@ def teste():
             if(this.flag == False):
                 this.codigo = operacoes.selecionarCodigoLanche()
                 this.nome = operacoes.selecionarNomeLanche()
+                this.ingrediente = operacoes.selecionarIngredienteLanche()
+                this.valor = operacoes.selecionarValorLanche()
             this.flag = True       
         
-        return render_template('teste.html', titulo = 'Consultar', codigo = this.codigo, nome = this.nome)
+        return render_template('teste.html', titulo = 'Consultar', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
 
 
 

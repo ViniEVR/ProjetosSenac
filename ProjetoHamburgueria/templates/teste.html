@@ -1,37 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Bootstrap demo</title>
-</head>
-<body>
-    <p>{{ nome }}</p>
-    <p>{{ codigo }}</p> 
+  </head>
+  <body id="img" >
+    <div class="container-fluid d-flex justify-content-center" >
+        <h1>Hamburgueria</h1>
+    </div>
+    <div style="margin-top: 80px;" class="d-grid gap-4 justify-content-center">
+
+      <form action="./teste.html" method="POST">
+        <div  class="modal fade" id="lanches" tabindex="-1" aria-labelledby="lanches" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="lanches">Cadastrar lanche</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                    <table class="table table-hover">
+            
+                        <tr allign="center">
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Ingredientes</th>
+                            <th>Valor</th>
+                        </tr>
+                        {% for i in range(0, len) %}
+                        <tr allign="center">    
+                            <td>{{ codigo[i] }}</td>
+                            <td>{{ nome[i] }}</td>
+                            <td>{{ ingrediente[i] }}</td>
+                            <td>{{ valor[i] }}</td>
+                        </tr>
+                        {% endfor %}
+                        
+
+                    </table>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" >Cadastrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#lanches" name="selecionar" value="1" >Lanches</button>
+    </form>
+      
+        <button type="button" class="btn btn-warning btn-lg">Bebidas</button>
+        <button type="button" class="btn btn-warning btn-lg">Sobremesas</button>
+        <button type="button" class="btn btn-warning btn-lg">Pagar a conta e sair</button>
+    </div>
+    <a href="./funcionario.html"> <button style="margin-top: 30px;" type="button" class="btn btn-warning btn-lg position-absolute top-0 end-0" data-bs-toggle="modal" data-bs-target="#exampleModal" >Entrar como funcionário</button> </a>
+        
+
     
-
-    <table class="table table-hover">
-        
-        <tr allign="center">
-            <th>Código</th>
-            <th>Nome</th>
-            <th>Ingredientes</th>
-            <th>Valor</th>
-        </tr>
-        {% for j in codigo %}
-        {% for i in nome %}
-        
-        <tr allign="center">    
-            <td>{{j}}</td>
-            <td>{{i}}</td>
-        </tr>
-        {% endfor %}
-        {% endfor %}
-        
-
-    </table>
-</body>
+    
+    
+  </body>
 </html>
