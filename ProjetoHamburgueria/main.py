@@ -25,6 +25,8 @@ this.valorSobremesa = 0
 this.sobremesa = ""
 this.Funcionario = ""
 this.senhaFuncionario = ""
+this.nDado = ""
+this.dado = ""
 
 
 
@@ -133,6 +135,7 @@ def atualizarDados():
         else:
             return render_template('notFound.html')
     return render_template('atualizar.html', titulo='Funcionário - ADM', resultado=this.dados)
+
 
 if __name__ == "__main__":
     inicio.run(debug=True, port=5000)

@@ -320,10 +320,10 @@ def excluirFuncionario(codigo):
 
 def atualizar(codigo, campo, novoDado):
     try:
-        sql = "update lanche set {} = '{}' where codigo = '{}".format(campo, novoDado, codigo)
+        sql = "update lanche set {} = '{}' where codigo = '{}'".format(campo, novoDado, codigo)
         con.execute(sql)
         db_connection.commit()
-        return "{} Atualizar!".format(con.rowcount)
-
+        return "{} Atualizado!".format(con.rowcount)
     except Exception as erro:
         return erro
+
