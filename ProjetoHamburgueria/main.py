@@ -34,11 +34,12 @@ inicio = Flask(__name__) #Representando uma variável do tipo flask
 def menu():
     if request.method == 'POST':
         this.nome     = request.form['tNovoNome']
-        this.telefone = request.form['tNovoTelefone']
-        this.endereco = request.form['tNovoEndereco']
+        this.ingredientes = request.form['ingredientes']
+        this.preco = request.form['preco']
         this.data     = request.form['tNovaData']
-        this.dados    = operacoes.inserir(this.nome, this.telefone, this.endereco, this.data)
+        this.dados    = operacoes.inserir(this.nome, this.ingredientes, this.preco, this.data)
     return render_template('index.html', titulo='Página Principal', resultado=this.dados)
+
 
 @inicio.route('/funcionario.html', methods = ['GET', 'POST'])
 def menuFuncionario():
@@ -108,7 +109,30 @@ def teste():
         return render_template('teste.html', titulo = 'Consultar', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
 
 
-
+@inicio.route('/atualizar.html', methods=['GET','POST'])
+def atualizarDados():
+    if request.method == 'POST':
+        if request.form['atualizar']  == '1':
+            this.codigo = request.form['tCodigo']
+            this.campo = request.form['tCampo']
+            this.nDado  = request.form['tNovoDado']
+            this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
+            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+        elif request.form['atualizar']  == '2':
+            this.codigo = request.form['tCodigo']
+            this.campo  = request.form['tCampo']
+            this.nDado  = request.form['tNovoDado']
+            this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
+            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+        elif request.form['atualizar']  == '3':
+            this.codigo = request.form['tCodigo']
+            this.campo  = request.form['tCampo']
+            this.nDado  = request.form['tNovoDado']
+            this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
+            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+        else:
+            return render_template('notFound.html')
+    return render_template('atualizar.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 if __name__ == "__main__":
     inicio.run(debug=True, port=5000)
