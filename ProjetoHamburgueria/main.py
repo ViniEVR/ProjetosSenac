@@ -97,7 +97,7 @@ def cadastroBebida():
  
 
 
-@inicio.route('/teste.html', methods = ['GET', 'POST'])
+@inicio.route('/cardapio.html', methods = ['GET', 'POST'])
 def teste():
 
         if request.method == 'POST':
@@ -108,7 +108,7 @@ def teste():
                 this.valor = operacoes.selecionarValorLanche()
             this.flag = True       
         
-        return render_template('teste.html', titulo = 'Consultar', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
+        return render_template('cardapio.html', titulo = 'Consultar', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
 
 
 @inicio.route('/atualizar.html', methods=['GET','POST'])
