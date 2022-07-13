@@ -7,6 +7,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>{{ titulo }}</title>
+      <script>
+        function checkempty(form) {
+            if (form.cLanche.value == "" ||
+                form.cLanche.value == null ||
+                form.cLanche.value == undefined ||
+                form.cLanche.value.length == 0 || 
+                form.cIngredientesLanche.value == "" ||
+                form.cIngredientesLanche.value == null || 
+                form.cIngredientesLanche.value == undefined ||
+                form.cIngredientesLanche.value == 0 ||
+                form.cValorLanche.value == "" ||
+                form.cValorLanche.value == null ||
+                form.cValorLanche.value == undefined ||
+                form.cValorLanche.value == 0 
+                )   {
+              
+                alert("Digite valores válidos!\n");
+                return false;
+            } else {
+                alert("Cadastrado com sucesso!\n");
+                return true;
+            }
+        }
+      </script>
   </head>
   <body id="img" >
     <div class="container-fluid d-flex justify-content-center" >
@@ -14,7 +38,7 @@
     </div>
 
     <div style="margin-top: 30px;" class="d-grid gap-4 justify-content-center">
-      <form action="./funcionario.html" method="POST">
+      <form onsubmit="return checkempty(cadastroLanche)"action="./funcionario.html" method="POST" name="cadastroLanche">
             <div  class="modal fade" id="modalLanche" tabindex="-1" aria-labelledby="modalLanche" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">

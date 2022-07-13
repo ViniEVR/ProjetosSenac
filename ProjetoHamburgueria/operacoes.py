@@ -23,10 +23,7 @@ def inserirLanches(nome, ingredientes, preco):
                 ingredientes = input('\nDigite os ingredientes: ')
                 preco = int(input('\nDigite o valor: R$'))
 
-            print('____________________________________________')
-            print('\nDigite valores válidos\n')
-            print('____________________________________________')
-            funcionario.mostrarMenu()
+            return "Digite valores válidos"
         else:
             sql = f"INSERT INTO lanche(codigo, nome, ingredientes, preco) values('','{nome}','{ingredientes}','{preco}')"
             con.execute(sql) #Prepara o comando para ser executado
