@@ -119,22 +119,28 @@ def atualizarDados():
             this.campo = request.form['tCampo']
             this.nDado  = request.form['tNovoDado']
             this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
-            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+            return render_template('funcionario.html', titulo='Atualizar', resultado=this.dado)
         elif request.form['atualizar']  == '2':
             this.codigo = request.form['tCodigo']
             this.campo  = request.form['tCampo']
             this.nDado  = request.form['tNovoDado']
-            this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
-            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+            this.dado = operacoes.atualizarBebida(this.codigo, this.campo, this.nDado)
+            return render_template('funcionario.html', titulo='Atualizar', resultado=this.dado)
         elif request.form['atualizar']  == '3':
             this.codigo = request.form['tCodigo']
             this.campo  = request.form['tCampo']
             this.nDado  = request.form['tNovoDado']
-            this.dado = operacoes.atualizar(this.codigo, this.campo, this.nDado)
-            return render_template('atualizar.html', titulo='Atualizar', resultado=this.dado)
+            this.dado = operacoes.atualizarSobremesa(this.codigo, this.campo, this.nDado)
+            return render_template('funcionario.html', titulo='Atualizar', resultado=this.dado)
+        elif request.form['atualizar']  == '4':
+            this.codigo = request.form['tCodigo']
+            this.campo  = request.form['tCampo']
+            this.nDado  = request.form['tNovoDado']
+            this.dado = operacoes.atualizarFuncionario(this.codigo, this.campo, this.nDado)
+            return render_template('funcionario.html', titulo='Atualizar', resultado=this.dado)
         else:
             return render_template('notFound.html')
-    return render_template('atualizar.html', titulo='Funcionário - ADM', resultado=this.dados)
+    return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
 
 
 if __name__ == "__main__":

@@ -74,6 +74,48 @@
           <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirLanche" name="cadastrar" id="cadastrar" value="2" >Excluir Lanche</button>
       </form>
 
+        <form action="./atualizar.html" method="POST">
+              <div  class="modal fade" id="modalAtualizarLanche" tabindex="-1" aria-labelledby="modalAtualizarLanche" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalAtualizarLanche">Atualizar Lanche</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                          <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Codigo:</label>
+                            <input type="number" class="form-control" name="tCodigo" placeholder="Codigo do Lanche">
+                          </div>
+  
+                          <div class="mb-3">
+                            <label for="message-text" class="col-form-label"></label>
+                            <div class="dropdown">
+                            </div>
+                          </div>
+                          <select name="tCampo">
+                            <option value="nome">Nome do Lanche</option>
+                            <option value="ingredientes">ingredientes</option>
+                            <option value="preco">Valor do Lanche</option>
+                        </select>
+                          <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Novo Dado:</label>
+                            <input type="text" step="0.01" min="0.01" class="form-control" name="tNovoDado" placeholder=></textarea>
+                          </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" name="atualizar" value="1" >Cadastrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalAtualizarLanche" >Atualizar Lanche</button>
+          </form>
+
+
           <form action="./funcionario.html" method="POST">
                 <div  class="modal fade" id="modalBebida" tabindex="-1" aria-labelledby="modalBebida" aria-hidden="true">
                   <div class="modal-dialog">
@@ -129,6 +171,46 @@
               </div>
               <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirBebida" name="cadastrar" id="cadastrar" value="4" >Excluir Bebida</button>
           </form>
+
+            <form action="./atualizar.html" method="POST">
+                  <div  class="modal fade" id="modalAtualizarBebida" tabindex="-1" aria-labelledby="modalAtualizarBebida" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalAtualizarBebida">Atualizar Bebida</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                              <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Codigo:</label>
+                                <input type="number" class="form-control" name="tCodigo" placeholder="Codigo da Bebida">
+                              </div>
+      
+                              <div class="mb-3">
+                                <label for="message-text" class="col-form-label"></label>
+                                <div class="dropdown">
+                                </div>
+                              </div>
+                              <select name="tCampo">
+                                <option value="nome">Nome da Bebida</option>
+                                <option value="preco">Valor da Bebida</option>
+                            </select>
+                              <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Novo Dado:</label>
+                                <input type="text" step="0.01" min="0.01" class="form-control" name="tNovoDado" placeholder=></textarea>
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary" name="atualizar" value="2" >Cadastrar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalAtualizarBebida" >Atualizar Bebida</button>
+              </form>
 
             <div style="margin-top: 30px;" class="d-grid gap-4 justify-content-center">
               <form action="./funcionario.html" method="POST">
@@ -191,6 +273,47 @@
                   <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirSobremesa" name="cadastrar" id="cadastrar" value="6" >Excluir Sobremesa</button>
               </form>
 
+                <form action="./atualizar.html" method="POST">
+                      <div  class="modal fade" id="modalAtualizarSobremesa" tabindex="-1" aria-labelledby="modalAtualizarSobremesa" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modalAtualizarSobremesa">Atualizar Sobremesa</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                  <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Codigo:</label>
+                                    <input type="number" class="form-control" name="tCodigo" placeholder="Codigo da Sobremesa">
+                                  </div>
+          
+                                  <div class="mb-3">
+                                    <label for="message-text" class="col-form-label"></label>
+                                    <div class="dropdown">
+                                    </div>
+                                  </div>
+                                  <select name="tCampo">
+                                    <option value="nome">Nome da Sobremesa</option>
+                                    <option value="ingredientes">ingredientes</option>
+                                    <option value="preco">Valor da Sobremesa</option>
+                                </select>
+                                  <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Novo Dado:</label>
+                                    <input type="text" step="0.01" min="0.01" class="form-control" name="tNovoDado" placeholder=></textarea>
+                                  </div>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary" name="atualizar" value="3" >Cadastrar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalAtualizarSobremesa" >Atualizar Sobremesa</button>
+                  </form>
+
                 <form action="./funcionario.html" method="POST">
                   <div  class="modal fade" id="modalFuncionario" tabindex="-1" aria-labelledby="modalFuncionario" aria-hidden="true">
                     <div class="modal-dialog">
@@ -244,11 +367,50 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirFuncionario" name="cadastrar" id="cadastrar" value="8" >Excluir Funcionario</button>
+                <button type="submit" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalExcluirFuncionario" name="cadastrar" id="cadastrar" value="8" >Excluir Funcionário</button>
             </form>
 
+              <form action="./atualizar.html" method="POST">
+                    <div  class="modal fade" id="modalAtualizarFuncionario" tabindex="-1" aria-labelledby="modalAtualizarFuncionario" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalAtualizarFuncionario">Atualizar Funcionário</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                  <label for="recipient-name" class="col-form-label">Codigo:</label>
+                                  <input type="number" class="form-control" name="tCodigo" placeholder="Codigo do Funcionário">
+                                </div>
+        
+                                <div class="mb-3">
+                                  <label for="message-text" class="col-form-label"></label>
+                                  <div class="dropdown">
+                                  </div>
+                                </div>
+                                <select name="tCampo">
+                                  <option value="nome">Nome</option>
+                                  <option value="senha">Senha</option>
+                              </select>
+                                <div class="mb-3">
+                                  <label for="message-text" class="col-form-label">Novo Dado:</label>
+                                  <input type="text" step="0.01" min="0.01" class="form-control" name="tNovoDado" placeholder=></textarea>
+                                </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" name="atualizar" value="4" >Cadastrar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal" data-bs-target="#modalAtualizarFuncionario" >Atualizar Funcionário</button>
+                </form>
+
         <a href="/"> <button type="button" class="btn btn-warning btn-lg">Retornar ao menu anterior</button></a>
-        <a href="./atualizar.html"> <button type="button" class="btn btn-warning btn-lg">Atualizar</button></a>
     </div>
 
     

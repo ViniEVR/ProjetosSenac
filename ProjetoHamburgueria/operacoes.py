@@ -327,3 +327,31 @@ def atualizar(codigo, campo, novoDado):
     except Exception as erro:
         return erro
 
+
+def atualizarBebida(codigo, campo, novoDado):
+    try:
+        sql = "update Bebida set {} = '{}' where codigo = '{}'".format(campo, novoDado, codigo)
+        con.execute(sql)
+        db_connection.commit()
+        return "{} Atualizado!".format(con.rowcount)
+    except Exception as erro:
+        return erro        
+
+def atualizarSobremesa(codigo, campo, novoDado):
+    try:
+        sql = "update sobremesa set {} = '{}' where codigo = '{}'".format(campo, novoDado, codigo)
+        con.execute(sql)
+        db_connection.commit()
+        return "{} Atualizado!".format(con.rowcount)
+    except Exception as erro:
+        return erro      
+
+def atualizarFuncionario(codigo, campo, novoDado):
+    try:
+        sql = "update funcionario set {} = '{}' where codigo = '{}'".format(campo, novoDado, codigo)
+        con.execute(sql)
+        db_connection.commit()
+        return "{} Atualizado!".format(con.rowcount)
+    except Exception as erro:
+        return erro                 
+
