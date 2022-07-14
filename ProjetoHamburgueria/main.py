@@ -46,6 +46,10 @@ def menu():
 @inicio.route('/funcionario.html', methods = ['GET', 'POST'])
 def menuFuncionario():
     if request.method == 'POST':
+        this.codigo = operacoes.selecionarCodigoLanche()
+        this.nome = operacoes.selecionarNomeLanche()
+        this.ingrediente = operacoes.selecionarIngredienteLanche()
+        this.valor = operacoes.selecionarValorLanche()
         if request.form['cadastrar']  == "1":
             this.lanche = request.form['cLanche']
             this.ingredienteLanche = request.form['cIngredienteLanche']
@@ -86,7 +90,7 @@ def menuFuncionario():
             return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)        
         else:
             return render_template('notFound.html')
-    return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados)
+    return render_template('funcionario.html', titulo='Funcionário - ADM', resultado=this.dados, len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
     
 def cadastroBebida():
     if request.method == 'POST':
@@ -101,14 +105,13 @@ def cadastroBebida():
 def teste():
 
         if request.method == 'POST':
-            if(this.flag == False):
-                this.codigo = operacoes.selecionarCodigoLanche()
-                this.nome = operacoes.selecionarNomeLanche()
-                this.ingrediente = operacoes.selecionarIngredienteLanche()
-                this.valor = operacoes.selecionarValorLanche()
-            this.flag = True       
+            this.codigo = operacoes.selecionarCodigoLanche()
+            this.nome = operacoes.selecionarNomeLanche()
+            this.ingrediente = operacoes.selecionarIngredienteLanche()
+            this.valor = operacoes.selecionarValorLanche()
+ 
         
-        return render_template('cardapio.html', titulo = 'Consultar', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
+        return render_template('cardapio.html', titulo = 'Cardápio', len = len(this.codigo), codigo = this.codigo, nome = this.nome, ingrediente = this.ingrediente, valor = this.valor)
 
 
 @inicio.route('/atualizar.html', methods=['GET','POST'])
